@@ -92,3 +92,26 @@ function filterJobs(filterType) {
         noJobsBox.classList.add('hidden');
     }
 }
+
+function deleteJob(id) {
+    
+    const card = document.getElementById(`job-card-${id}`);
+    const statusBadge = document.getElementById(`status-${id}`);
+    const currentStatus = statusBadge.innerText.trim().toUpperCase();
+
+    
+    updateHeaderCount('total-count', -1);
+    
+    
+    if (currentStatus === 'INTERVIEW') {
+        updateHeaderCount('interview-count', -1);
+    } else if (currentStatus === 'REJECTED') {
+        updateHeaderCount('rejected-count', -1);
+    }
+
+    
+    card.remove();
+
+    
+    filterJobs('ALL');
+}
