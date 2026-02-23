@@ -43,7 +43,6 @@ function filterJobs(filterType) {
     const interviewBtn = document.getElementById('interview-btn');
     const rejectedBtn = document.getElementById('rejected-btn');
 
-    
     const defaultClass = "text-gray-500 hover:bg-gray-100 px-6 py-2 rounded-md text-sm font-medium transition";
     const activeClass = "bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium";
 
@@ -51,14 +50,9 @@ function filterJobs(filterType) {
     if (interviewBtn) interviewBtn.className = defaultClass;
     if (rejectedBtn) rejectedBtn.className = defaultClass;
 
-    
-    if (filterType === 'ALL') {
-        allBtn.className = activeClass;
-    } else if (filterType === 'INTERVIEW') {
-        interviewBtn.className = activeClass;
-    } else if (filterType === 'REJECTED') {
-        rejectedBtn.className = activeClass;
-    }
+    if (filterType === 'ALL') allBtn.className = activeClass;
+    else if (filterType === 'INTERVIEW') interviewBtn.className = activeClass;
+    else if (filterType === 'REJECTED') rejectedBtn.className = activeClass;
 
     
     const allCards = document.querySelectorAll('#job-container > div:not(#no-jobs-container)');
@@ -78,11 +72,23 @@ function filterJobs(filterType) {
     });
 
     
+    const jobCountSpan = document.getElementById('job-count'); 
+    const totalCount = allCards.length;
+
+    if (filterType === 'ALL') {
+        jobCountSpan.innerText = totalCount; 
+    } else {
+        if (visibleCount > 0) {
+            jobCountSpan.innerText = `${visibleCount} of ${totalCount}`; 
+        } else {
+            jobCountSpan.innerText = '0';
+        }
+    }
+
+    
     if (visibleCount === 0) {
         noJobsBox.classList.remove('hidden');
-        noJobsBox.classList.add('flex');
     } else {
         noJobsBox.classList.add('hidden');
-        noJobsBox.classList.remove('flex');
     }
 }
