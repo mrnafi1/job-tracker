@@ -46,11 +46,11 @@
     </div>
 
     <div class="flex gap-4 mb-8">
-        <button class="bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium">All</button>
+        <button id="all-btn" onclick="filterJobs('ALL')" class="bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium">All</button>
+         
+        <button id="interview-btn" onclick="filterJobs('INTERVIEW')"  class="text-gray-500 hover:bg-gray-100 px-6 py-2 rounded-md text-sm font-medium transition">Interview</button>
         
-        <button  class="text-gray-500 hover:bg-gray-100 px-6 py-2 rounded-md text-sm font-medium transition">Interview</button>
-        
-        <button class="text-gray-500 hover:bg-gray-100 px-6 py-2 rounded-md text-sm font-medium transition">Rejected</button>
+        <button id="rejected-btn" onclick="filterJobs('REJECTED')" class="text-gray-500 hover:bg-gray-100 px-6 py-2 rounded-md text-sm font-medium transition">Rejected</button>
     </div>
 <div id="no-jobs-container" class="hidden flex flex-col items-center justify-center py-20 bg-white rounded-xl border border-dashed border-gray-200 mt-4">
     
