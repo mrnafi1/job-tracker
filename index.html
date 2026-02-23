@@ -48,13 +48,19 @@
     <div class="flex gap-4 mb-8">
         <button class="bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium">All</button>
         
-        <button class="text-gray-500 hover:bg-gray-100 px-6 py-2 rounded-md text-sm font-medium transition">Interview</button>
+        <button  class="text-gray-500 hover:bg-gray-100 px-6 py-2 rounded-md text-sm font-medium transition">Interview</button>
         
         <button class="text-gray-500 hover:bg-gray-100 px-6 py-2 rounded-md text-sm font-medium transition">Rejected</button>
     </div>
-
+<div id="no-jobs-container" class="hidden flex flex-col items-center justify-center py-20 bg-white rounded-xl border border-dashed border-gray-200 mt-4">
+    
+    <img src="jobs.png" alt="No Jobs" class="w-16 h-16 mb-4 opacity-40">
+    
+    <h3 class="text-xl font-bold text-gray-700">No jobs available</h3>
+    <p class="text-sm text-gray-400 mt-2">Check back soon for new job opportunities</p>
+</div>
     <div id="job-container" class="space-y-6">
-        <div class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm relative">
+        <div class=" bg-white p-8 rounded-xl border border-gray-100 shadow-sm relative">
             
             <button class="absolute top-6 right-8 text-gray-300 hover:text-red-500">
                 <i class="fa-regular fa-trash-can text-lg"></i>
